@@ -1,10 +1,12 @@
-<h1>Listing rooms</h1>
+<h1><%= t '.top_title'%></h1>
+
+<br/>
 
 <table border='1'>
   <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Description</th>
+    <th><%= t 'activerecord.attributes.room.title'%></th>
+    <th><%= t 'activerecord.attributes.room.location'%></th>
+    <th><%= t 'activerecord.attributes.room.description'%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,14 +17,14 @@
     <td><%= room.title %></td>
     <td><%= room.location %></td>
     <td><%= room.description %></td>
-    <td><%= link_to 'Show', room %></td>
-    <td><%= link_to 'Edit', edit_room_path(room) %></td>
-    <td><%= link_to 'Destroy', room, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('links.show'), room %></td>
+    <td><%= link_to t('links.edit'), edit_room_path(room) %></td>
+    <td><%= link_to t('links.destroy'), room, confirm: t('message.destroy'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Room', new_room_path %>
-<%= link_to 'Voltar', root_path%>
+<%= link_to t('.new_room'), new_room_path %> |
+<%= link_to t('links.back'), root_path%>

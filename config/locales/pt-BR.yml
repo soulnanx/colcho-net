@@ -1,4 +1,7 @@
 pt-BR:
+  layout:
+    rooms: Rooms
+    signup: Signup
   users:
     new:
       title: Cadastro
@@ -10,16 +13,29 @@ pt-BR:
       location: "Localização: %{location}"
       bio: "Bio: %{bio}"
   rooms:
+    show:
+      title: "Titulo: %{title}"
+      edit: 'Editar quarto'
+      description: "Descrição: %{description}"
+      location: "Localização: %{location}"
     new:
       title: Quarto
     edit:
       title: Editando Quarto
-      show: Exibir
+    index:
+      top_title: Listando quartos
+      new_room: Novo quarto
+
   links:
     back: Voltar
+    show: Exibir
+    edit: Editar
+    destroy: Apagar
+  message:
+    destroy: Você tem certeza?
   general:
-    form_error: Há errors no formulário, por favor verifique.
-    
+    form_error: "Há errors no formulário, por favor verifique."
+
   activerecord:
     models:
       room: Quarto
