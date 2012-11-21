@@ -1,9 +1,10 @@
 Colchonet::Application.routes.draw do
-	scope ":locale", :locale => /en|pt\-BR/ do
-		resources :rooms
-		resources :users
-		resource :user_confirmation, :only => [:show]
-	end
-	
-	root :to => "home#index"
+LOCALES = /en|pt\-BR/
+scope "(:locale)", :locale => LOCALES do
+resources :rooms
+resources :users
+resource :user_confirmation, :only => [:show]
+end
+match '/:locale' => 'home#index', :locale => LOCALES
+root :to => "home#index"
 end
