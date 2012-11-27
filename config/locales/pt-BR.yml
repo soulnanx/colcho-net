@@ -12,6 +12,8 @@ pt-BR:
       edit: 'Editar perfil'
       location: "Localização: %{location}"
       bio: "Bio: %{bio}"
+    confirmations:
+      success: Email confirmado com sucesso, obrigado!  
   rooms:
     show:
       title: "Titulo: %{title}"
@@ -57,8 +59,7 @@ pt-BR:
         location: Localização
         password: Senha
         password_confirmation: Confirme sua senha
-        confirmations:
-          success: Email confirmado com sucesso, obrigado!
+
       room:
         description: Descrição
         location: Localização
