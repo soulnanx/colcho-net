@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+	before_filter :require_no_authentication, :only => [:new, :create]
+	before_filter :can_change, :only => [:edit, :update]
 
 	def new
 		@user = User.new
+	end
+
+	def show 
+		@user = User.find(params[:id])
 	end
 
 	def create
@@ -13,10 +19,6 @@ class UsersController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def show 
-		@user = User.find(params[:id])
 	end
 
 	def edit
@@ -31,5 +33,17 @@ class UsersController < ApplicationController
 		else
 			render :update
 		end		
+	end
+
+	private
+
+	def can_change
+		unless user_signed_in? && current_user == user
+			redirect_to user_path(params[:id])
+		end
+	end
+
+	def user
+		@user ||= User.find(params[:id])
 	end
 end

@@ -6,8 +6,7 @@ Colchonet::Application.routes.draw do
 	
 	resource :confirmation, :only => [:show]
 
-	resource :user_sessions, :only => [:create, :new, :destroy]
-
+	resource :user_sessions, :only => [:create, :new, :destroy], :path => 'login', :path_names => {:new => ''}
 	
 end
 
