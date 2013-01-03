@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+	has_many :rooms, :dependent => :destroy
+	has_many :reviews, :dependent => :destroy
+	has_many :reviewed_rooms, :through => :reviews, :source => :room
 	
 
 	attr_accessible :bio, 
