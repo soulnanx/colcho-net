@@ -6,6 +6,15 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def index
+		@user = User.all
+		respond_to do |format|
+      format.html { redirect_to users_url }
+      format.xml { render :xml => @user }
+      format.json { render :json => @user }
+    end
+	end
+
 	def show 
 		@user = User.find(params[:id])
 	end
